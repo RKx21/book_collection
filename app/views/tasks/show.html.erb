@@ -1,1 +1,46 @@
-<h1>SHOW</h1>
+<%= link_to("Back to List", tasks_path, class: 'back-link') %>
+
+<div class="book show">
+  <h2>Show Book</h2>
+
+  <div class="actions">
+    <%= link_to('Edit', '#') %>
+    <%= link_to('Delete', '#') %>
+  </div>
+
+  <table summary="book detail view">
+    <tr>
+      <th>Title</th>
+      <td><%= @task.title %></td>
+    </tr>
+    <tr>
+      <th>Author</th>
+      <td><%= @task.author %></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><%= @task.price%></td>
+    </tr>
+    <tr>
+      <th>Date Published</th>
+      <td><%= @task.published_date %></td>
+    </tr>
+    <tr>
+      <th>Publisher</th>
+      <td>
+        <% if @task.publisher %>
+          <%= @task.publisher.title %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @task.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @task.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
