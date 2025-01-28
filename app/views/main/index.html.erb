@@ -1,0 +1,11 @@
+<h1>Main#index</h1>
+
+<a href="/tasks/add">Add a book</a> <br/>
+<%= link_to('Show a Book', '/tasks/add') %><br />
+<%= link_to('Update a Book', {controller: 'tasks', action: 'update'}) %><br />
+
+<ul>
+<% @books.each do |book| %>
+  <li><%= book %></li>
+<% end %>
+</ul>
