@@ -1,0 +1,29 @@
+<%= link_to('Back to Homepage', {controller: 'main', action: 'index'}) %><br />
+
+<div class="tasks index">
+  <h2>Books in Library</h2>
+
+  <%= link_to("Add New Task", '#', class: 'action new') %>
+
+  <table class="listing" summary="Task list" style="width: 100%;">
+    <tr class="header">
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Date Published</th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.title %></td>
+      <td><%= task.author %></td>
+      <td><%= task.price %></td>
+      <td><%= task.published_date|| '-' %></td>
+      <td class="actions">
+        <%= link_to("Show", task_path(task), class: 'action show') %>
+        <%= link_to("Edit", '#', class: 'action edit') %>
+        <%= link_to("Delete", '#', class: 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

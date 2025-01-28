@@ -1,0 +1,10 @@
+<h1>Task#index</h1>
+
+<a href="/tasks/add">Add a book</a> <br/>
+<%= link_to('Task 2', '/tasks/add') %><br />
+
+<ul>
+<% @books.each do |book| %>
+  <li><%= book %></li>
+<% end %>
+</ul>
