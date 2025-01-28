@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     def index
-        @tasks = Task.all
+        @tasks = Task.order(created_at: :asc)
     end
 
     def show
@@ -14,6 +14,7 @@ class TasksController < ApplicationController
     def create
         @task = Task.new(book_params)
         if @task.save
+            flash[:notice] = "Task was successfully created."
             redirect_to tasks_path
         else
             render("new")
@@ -27,6 +28,7 @@ class TasksController < ApplicationController
     def update
         @task = Task.find(params[:id])
         if @task.update(book_params)
+            flash[:notice] = "Task was successfully updated."
             redirect_to task_path(@task)
         else
             render("edit")
@@ -34,9 +36,14 @@ class TasksController < ApplicationController
     end
 
     def delete
+        @task = Task.find(params[:id])
     end
 
     def destroy
+        @task = Task.find(params[:id])
+        @task.destroy
+        flash[:notice] = "Task was successfully deleted."
+        redirect_to tasks_path, notice: 'Task was successfully deleted.'
     end
 
     private
