@@ -12,11 +12,11 @@ class TasksController < ApplicationController
     end
 
     def create
-        @task = Task.new(book_params) 
+        @task = Task.new(book_params)
         if @task.save
             redirect_to tasks_path
         else
-            render('new')
+            render("new")
         end
     end
 
@@ -29,22 +29,22 @@ class TasksController < ApplicationController
         if @task.update(book_params)
             redirect_to task_path(@task)
         else
-            render('edit')
+            render("edit")
         end
     end
 
     def delete
-    end 
+    end
 
     def destroy
     end
 
     private
-    
-    def book_params 
+
+    def book_params
         params.require(:task).permit(
-            :title, 
-            :author, 
+            :title,
+            :author,
             :price,
             :published_date
         )

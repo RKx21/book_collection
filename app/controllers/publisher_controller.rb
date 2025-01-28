@@ -18,7 +18,7 @@ class PublisherController < ApplicationController
     end
 
     def delete
-    end 
+    end
 
     def destroy
     end
