@@ -2,7 +2,7 @@
 
 <a href="/tasks/new">Add a book</a> <br/>
 <%= link_to('Show a Book', {controller: 'tasks', action: 'index', page: 1}) %><br />
-<%= link_to('Edit a Book', '/tasks/edit') %><br />
+<%= link_to("Edit a book", edit_task_path(@task)) %> <br />
 
 
 <h2> Books in Library</h2>
