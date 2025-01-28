@@ -3,6 +3,4 @@ class MainController < ApplicationController
       @books=Task.all
       @task=Task.first
     end
-  
-  end
-  
+end
