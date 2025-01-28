@@ -4,8 +4,10 @@
 <%= link_to('Show a Book', {controller: 'tasks', action: 'index', page: 1}) %><br />
 <%= link_to('Edit a Book', '/tasks/edit') %><br />
 
+
+<h2> Books in Library</h2>
 <ul>
 <% @books.each do |book| %>
-  <li><%= book %></li>
+  <li><%= book.title %></li>
 <% end %>
 </ul>
