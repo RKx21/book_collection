@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-    belongs_to :publisher, optional: true
+  validates :title, presence: true
 end
