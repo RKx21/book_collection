@@ -51,6 +51,6 @@ class TasksController < ApplicationController
   private
 
   def book_params
-    params.require(:task).permit(:title, :author, :price, :published_date)
+    params.require(:task).permit(:author)
   end
 end
