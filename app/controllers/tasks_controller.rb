@@ -51,6 +51,6 @@ class TasksController < ApplicationController
   private
 
   def book_params
-    params.require(:task).permit(:date_published)
+    params.require(:task).permit( :published_date)
   end
 end
