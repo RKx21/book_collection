@@ -6,12 +6,11 @@ RSpec.describe "Creating a book", type: :feature do
     select "2020", from: "task_published_date_1i"
     select "June", from: "task_published_date_2i"
     select "30", from: "task_published_date_3i"
-    
+
     click_on "Create Book"
 
     expect(page).to have_content("Book was successfully created.")
     expect(page).to have_content("2020-06-30 00:00:00 UTC")
-    
   end
 
   scenario "invalid inputs (date published is blank)" do
