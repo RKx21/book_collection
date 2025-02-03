@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_28_050949) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_03_064155) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "publishers", force: :cascade do |t|
     t.string "name"
@@ -29,5 +35,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_28_050949) do
     t.datetime "updated_at", null: false
     t.integer "publisher"
     t.index ["publisher"], name: "index_tasks_on_publisher"
+  end
+
+  create_table "user_books", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end
