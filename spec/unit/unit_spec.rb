@@ -2,7 +2,12 @@
 require 'rails_helper'
 RSpec.describe Task, type: :model do
   subject do
-    described_class.new(title: 'harry potter')
+    described_class.new(
+      title: 'Harry Potter',
+      author: 'J.K Rowling',
+      price: 9,
+      published_date: '2020-06-30 00:00:00 UTC'
+    )
   end
 
   it 'is valid with valid attributes' do
