@@ -6,11 +6,6 @@ Rails.application.routes.draw do
 
   get "main/index"
 
-  # resources :publisher do
-  #   member do
-  #     get :delete
-  #   end
-  # end
 
   resources :tasks do
     member do
