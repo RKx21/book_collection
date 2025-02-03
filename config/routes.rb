@@ -2,18 +2,15 @@ Rails.application.routes.draw do
   resources :user_books
   resources :users
   root 'user_books#index'
-# root "main#index"
+  # root "main#index"
 
-  get "main/index"
-
+  get 'main/index'
 
   resources :tasks do
     member do
       get :delete
     end
   end
-
-
 
   # get 'tasks/index'
   # get 'tasks/new'
