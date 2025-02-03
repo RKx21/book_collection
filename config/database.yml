@@ -17,5 +17,7 @@ test:
   database: test_app_test
 
 production:
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
   <<: *default
   database: test_app_production
