@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Task.create!([
-    {title: "Harry Potter", author: "J.K. Rowling", price: 20.0, published_date: "2021-10-01"},
-    {title: "The Hobbit", author: "J.R.R. Tolkien", price: 15.0, published_date: "2021-10-01"},
-    {title: "The Great Gatsby", author: "F. Scott Fitzgerald", price: 10.0, published_date: "2021-10-01"},
-    {title: "To Kill a Mockingbird", author: "Harper Lee", price: 12.0, published_date: "2021-10-01"},
-    {title: "1984", author: "George Orwell", price: 8.0, published_date: "2021-10-01"},
+    {title: "Harry Potter"},
+    {title: "The Hobbit"},
+    {title: "The Great Gatsby"},
+    {title: "To Kill a Mockingbird"},
+    {title: "1984"},
 ])

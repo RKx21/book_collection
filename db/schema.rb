@@ -33,8 +33,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_03_064155) do
     t.datetime "published_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "publisher"
-    t.index ["publisher"], name: "index_tasks_on_publisher"
   end
 
   create_table "user_books", force: :cascade do |t|

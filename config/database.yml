@@ -6,7 +6,7 @@ default: &default
 development:
   <<: *default
   database: test_app_development
-  host: postgres
+  host: 172.18.0.2
   port: 5432
   username: postgres
   password: password
@@ -14,11 +14,15 @@ development:
 test:
   <<: *default
   database: test_app_test
-  host: postgres
+  host: 172.18.0.2
   port: 5432
   username: postgres
   password: password
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: test_app_production
+  host: 172.18.0.2
+  port: 5432
+  username: postgres
+  password: password
